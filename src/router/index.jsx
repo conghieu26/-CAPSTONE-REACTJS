@@ -1,13 +1,13 @@
 import * as React from "react";
 import { lazy, Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
-import { UserTemplate } from "../atomic/templates/user/user.template";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import { UserTemplate } from "../atomic/templates/user/index";
 
 const Home = lazy(() => import("../atomic/pages/home/index"));
-const Contact = lazy(() => import("../atomic/pages/contact/index"));
-const News = lazy(() => import("../atomic/news/index"));
-const Register = lazy(() => import("../atomic/pages/Register/index"));
-const Login = lazy(() => import("../atomic/pages/Login/index"));
+const ShowingMovie = lazy(() => import("../atomic/pages/showing-movie/index"));
+const ComingMovie = lazy(() => import("../atomic/pages/coming-movie/index"));
+const Register = lazy(() => import("../atomic/pages/register/index"));
+const Login = lazy(() => import("../atomic/pages/login/index"));
 
 export const router = createBrowserRouter([
   {
@@ -16,27 +16,15 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "home",
-        element: (
-          <Suspense fallback={<>Loading...</>}>
-            <Home />
-          </Suspense>
-        ),
+        element: <Home />,
       },
       {
-        path: "contact",
-        element: (
-          <Suspense fallback={<>Loading...</>}>
-            <Contact />
-          </Suspense>
-        ),
+        path: "showing-movie",
+        element: <ShowingMovie />,
       },
       {
-        path: "news",
-        element: (
-          <Suspense fallback={<>Loading...</>}>
-            <News />
-          </Suspense>
-        ),
+        path: "coming-movie",
+        element: <ComingMovie />,
       },
     ],
   },
@@ -44,7 +32,7 @@ export const router = createBrowserRouter([
     path: "register",
     element: (
       <Suspense fallback={<>Loading...</>}>
-        <Register />
+        <Register />,
       </Suspense>
     ),
   },
@@ -52,8 +40,12 @@ export const router = createBrowserRouter([
     path: "login",
     element: (
       <Suspense fallback={<>Loading...</>}>
-        <Login />
+        <Login />,
       </Suspense>
     ),
+  },
+  {
+    path: "*",
+    element: <Navigate to="" replace></Navigate>,
   },
 ]);
