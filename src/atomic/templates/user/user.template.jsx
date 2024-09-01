@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
 export function UserTemplate() {
   return (
-    <div>
+    <div className="relative">
       <div className="flex justify-between items-center px-[15rem] py-[0.75rem] bg-[#193440] text-white sticky;">
         <Link to={""}>
           <div className="w-[8rem] flex flex-col items-center">
@@ -27,7 +27,7 @@ export function UserTemplate() {
         </div>
       </div>
       <Suspense fallback={<>Loading...</>}>
-        <Outlet />
+        <Outlet className="absolute" />
       </Suspense>
     </div>
   );
