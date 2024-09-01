@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Carousel } from "../../components/carousel/index";
 function Home() {
   const [listMovie, setListMovie] = useState([]);
   useEffect(() => {
@@ -13,11 +14,9 @@ function Home() {
     })();
   }, []);
 
-  console.log(listMovie);
   return (
     <div>
-      Home
-      {/* <Carousel image={listMovie} /> */}
+      <Carousel image={listMovie} />
     </div>
   );
 }
