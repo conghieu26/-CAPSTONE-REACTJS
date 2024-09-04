@@ -1,10 +1,12 @@
-import { Suspense } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import ShowingMovie from "../../components/showing-movie/index";
+import Home from "../../pages/home/index";
+
 export function UserTemplate() {
   return (
     <div className="relative">
       <div className="flex justify-between items-center px-[15rem] py-[0.75rem] bg-[#193440] text-white sticky;">
-        <Link to={""}>
+        <Link to={"home"}>
           <div className="w-[8rem] flex flex-col items-center">
             <img
               className="w-[50%]"
@@ -26,9 +28,19 @@ export function UserTemplate() {
           <Link to={"login"}>Login</Link>
         </div>
       </div>
-      <Suspense fallback={<>Loading...</>}>
-        <Outlet className="absolute" />
-      </Suspense>
+
+      <Home></Home>
+      <div className="w-[80%] m-auto">
+        <button>
+          <ShowingMovie></ShowingMovie>
+        </button>
+        <button>
+          <ShowingMovie></ShowingMovie>
+        </button>
+      </div>
+      {/* <Suspense fallback={<>Loading...</>}>
+        <Outlet />
+      </Suspense> */}
     </div>
   );
 }

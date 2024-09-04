@@ -3,7 +3,7 @@ import { RxDotFilled } from "react-icons/rx";
 export function Carousel({ image }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  console.log(image);
+  // console.log(image);
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };

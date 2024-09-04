@@ -7,13 +7,10 @@ import "./config /style/modern-normalize.css";
 import "./config /style/tailwind.css";
 
 import { RouterProvider } from "react-router-dom";
-import App from "./App";
 import { router } from "./router/index";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <RouterProvider router={router}>{/* <App /> */}</RouterProvider>
   </React.StrictMode>,
 );
