@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Carousel } from "../../components/carousel/index";
 function Home() {
   const [listMovie, setListMovie] = useState([]);
+
+  document.title = "Home";
   useEffect(() => {
     (async () => {
       const data = await axios({
