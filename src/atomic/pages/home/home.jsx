@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Carousel } from "../../components/carousel/index";
+import { useTitle } from "../../components/hooks/title.hook";
 function Home() {
   const [listMovie, setListMovie] = useState([]);
 
-  document.title = "Home";
+  useTitle("Movie");
   useEffect(() => {
     (async () => {
       const data = await axios({

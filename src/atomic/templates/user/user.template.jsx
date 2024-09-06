@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button";
-import ComingMovie from "../../components/coming-movie/index";
-import ShowingMovie from "../../components/showing-movie/index";
+import ShowingMovie from "../../components/showing-movie/showing-movie";
 import Home from "../../pages/home/index";
 
 export function UserTemplate() {
@@ -35,17 +34,13 @@ export function UserTemplate() {
         <div>
           <Home></Home>
         </div>
-
         <div className="w-[80%] m-auto">
-          <Button Text={"Showing Movie"}>
-            <ComingMovie></ComingMovie>
-          </Button>
-          <Button Text={"Showing Movie"}>
-            <ShowingMovie></ShowingMovie>
-          </Button>
-          <button></button>
-          <button></button>
+          <Button Text={"Showing Movie"}></Button>
+          <Button Text={"Showing Movie"}></Button>
         </div>
+        <ShowingMovie />
+
+
         {/* <Suspense fallback={<>Loading...</>}>
         <Outlet />
       </Suspense> */}
