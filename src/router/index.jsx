@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     path: "register",
     element: (
       <Suspense fallback={<>Loading...</>}>
-        <Register />,
+        <Register />
       </Suspense>
     ),
   },
@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
     path: "login",
     element: (
       <Suspense fallback={<>Loading...</>}>
-        <Login />,
+        <Login />
       </Suspense>
     ),
   },
