@@ -18,7 +18,7 @@ function ComingMovie({ action }) {
   }, []);
   console.log(listComingMovie);
   return (
-    <div className=" show grid grid-cols-4 w-[80%] m-auto mb-4 gap-6">
+    <div className="show grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
       {listComingMovie.map((movie) => (
         <Card
           name={movie.tenPhim}
