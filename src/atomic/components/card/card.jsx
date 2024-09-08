@@ -46,16 +46,18 @@ function Card({ name, image, rating, description }) {
   };
 
   return (
-    <div className=" box-border w-full max-w-s bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img
-          className="
-h-[87%] rounded-t-lg w-[100%]"
-          src={image}
-          alt="product image"
-        />
-      </a>
-      <div className=" px-5 pb-5 bg-black rounded-b-lg">
+    <div className=" h-[36rem] box-border w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="h-[70%]">
+        <a href="#">
+          <img
+            className="rounded-t-lg w-[100%] h-[100%] "
+            src={image}
+            alt="product image"
+          />
+        </a>
+      </div>
+
+      <div className="px-5 pb-5 bg-black rounded-b-lg  h-[30%]">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-white dark:text-white">
             {name}

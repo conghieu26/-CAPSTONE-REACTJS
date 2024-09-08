@@ -63,9 +63,7 @@ export function UserTemplate() {
             text={"Coming Movie"}
           ></Button>
         </div>
-        <div className="h-[1000px]">
-          {displayMovie === true ? <ShowingMovie /> : <ComingMovie />}
-        </div>
+        <div>{displayMovie === true ? <ShowingMovie /> : <ComingMovie />}</div>
         {/* <Suspense fallback={<>Loading...</>}>
         <Outlet />
       </Suspense> */}
