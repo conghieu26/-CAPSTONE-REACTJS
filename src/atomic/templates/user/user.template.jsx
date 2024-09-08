@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/button/button";
-import ShowingMovie from "../../components/showing-movie/showing-movie";
+import ComingMovie from "../../components/coming-movie/index";
+import ShowingMovie from "../../components/showing-movie/index";
 import Home from "../../pages/home/index";
 
 export function UserTemplate() {
+  const value = [
+    {
+      showingMovie: <ShowingMovie />,
+      comingMovie: <ComingMovie />,
+    },
+  ];
+
+  const [displayMovie, setdisplayMovie] = useState(true);
+
+  const showElement = (value) => {
+    setdisplayMovie(value);
+    console.log(displayMovie);
+  };
   return (
     <div>
-      <div>
+      <div className="bg-[#000001]">
         <div className="flex justify-between items-center px-[15rem] py-[0.75rem] bg-[#193440] text-white sticky; absolute w-[100%] z-[10000] bg-opacity-40">
           <Link to={"home"}>
             <div className="w-[8rem] flex flex-col items-center">
@@ -35,12 +50,22 @@ export function UserTemplate() {
           <Home></Home>
         </div>
         <div className="w-[80%] m-auto">
-          <Button Text={"Showing Movie"}></Button>
-          <Button Text={"Showing Movie"}></Button>
+          <Button
+            onclick={() => {
+              showElement(true);
+            }}
+            text={"Showing Movie"}
+          ></Button>
+          <Button
+            onclick={() => {
+              showElement(false);
+            }}
+            text={"Coming Movie"}
+          ></Button>
         </div>
-        <ShowingMovie />
-
-
+        <div className="h-[1000px]">
+          {displayMovie === true ? <ShowingMovie /> : <ComingMovie />}
+        </div>
         {/* <Suspense fallback={<>Loading...</>}>
         <Outlet />
       </Suspense> */}
