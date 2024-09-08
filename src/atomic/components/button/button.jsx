@@ -1,8 +1,12 @@
-function Button({ Text }) {
+function Button({ onclick, text }) {
+  text;
   return (
-    <button className="relative inline-flex items-center justify-center p-0.5 mt-5 mb-2 me-2 overflow-hidden text-xl text-gray-900 rounded-lg group bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 group-hover:from-red-200 group-hover:via-red-300 group-hover:to-yellow-200 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400">
-      <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-        {Text}
+    <button
+      onClick={onclick}
+      className="relative inline-flex items-center justify-center p-1 mt-6 mb-6 me-3 overflow-hidden text-xl font-bold text-white rounded-2xl group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-700 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
+    >
+      <span className="relative px-7 py-3 transition-all ease-in duration-75 bg-black rounded-xl group-hover:bg-opacity-0">
+        {text}
       </span>
     </button>
   );

@@ -27,6 +27,8 @@ export const router = createBrowserRouter([
         <Login />
       </Suspense>
     ),
+  }, {
+    path: "/movie/"
   },
   {
     path: "*",

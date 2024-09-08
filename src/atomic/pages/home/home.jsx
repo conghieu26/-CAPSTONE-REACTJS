@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { axiosWithAuth } from "../../../service/axios.config";
 import { Carousel } from "../../components/carousel/index";
 import { useTitle } from "../../components/hooks/title.hook";
 function Home() {
@@ -8,9 +8,9 @@ function Home() {
   useTitle("Movie");
   useEffect(() => {
     (async () => {
-      const data = await axios({
+      const data = await axiosWithAuth({
         method: "get",
-        url: "https://movieapi.cyberlearn.vn/api/QuanLyPhim/LayDanhSachBanner",
+        url: "/QuanLyPhim/LayDanhSachBanner",
       });
       // debugger;
       setListMovie(data.data.content);

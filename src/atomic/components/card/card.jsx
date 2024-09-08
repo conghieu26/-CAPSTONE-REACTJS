@@ -36,35 +36,38 @@ function Card({ name, image, rating, description }) {
     const normalStar = Math.floor(rating);
 
     for (let i = 0; i < normalStar; i++) {
-      stars.push(templateStar.filledStar);
+      stars.push(<span key={`filled-${i}`}>{templateStar.filledStar}</span>);
     }
 
     for (let i = normalStar; i < 10; i++) {
-      stars.push(templateStar.normalStar);
+      stars.push(<span key={`normal-${i}`}>{templateStar.normalStar}</span>);
     }
     return stars;
   };
 
   return (
-    <div>
-      <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className=" box-border w-full max-w-s bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <a href="#">
+        <img
+          className="
+h-[87%] rounded-t-lg w-[100%]"
+          src={image}
+          alt="product image"
+        />
+      </a>
+      <div className=" px-5 pb-5 bg-black rounded-b-lg">
         <a href="#">
-          <img className="p-8 rounded-t-lg" src={image} alt="product image" />
+          <h5 className="text-xl font-semibold tracking-tight text-white dark:text-white">
+            {name}
+          </h5>
         </a>
-        <div className="px-5 pb-5">
-          <a href="#">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-              {name}
-            </h5>
-          </a>
-          <div className="flex items-center mt-2.5 mb-5">
-            <div className="flex items-center space-x-1 rtl:space-x-reverse">
-              {renderStars(rating)}
-            </div>
-            <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-              {rating}
-            </span>
+        <div className="flex items-center mt-2.5 mb-5">
+          <div className="flex items-center space-x-1 rtl:space-x-reverse">
+            {renderStars(rating)}
           </div>
+          <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
+            {rating}
+          </span>
         </div>
       </div>
     </div>
