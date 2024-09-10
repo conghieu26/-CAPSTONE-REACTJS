@@ -47,22 +47,19 @@ function Card({ name, image, rating, description }) {
 
   return (
     <div className=" h-[36rem] box-border w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="h-[70%]">
-        <a href="#">
-          <img
-            className="rounded-t-lg w-[100%] h-[100%] "
-            src={image}
-            alt="product image"
-          />
-        </a>
+      <div className="h-[75%]">
+        <img
+          className="rounded-t-lg w-[100%] h-[100%] "
+          src={image}
+          alt="product image"
+        />
       </div>
 
-      <div className="px-5 pb-5 bg-black rounded-b-lg  h-[30%]">
-        <a href="#">
-          <h5 className="text-xl font-semibold tracking-tight text-white dark:text-white">
-            {name}
-          </h5>
-        </a>
+      <div className="pt-2 px-5 pb-5 bg-black rounded-b-lg  h-[25%]">
+        <h5 className="text-xl font-semibold tracking-tight text-white dark:text-white">
+          {name}
+        </h5>
+
         <div className="flex items-center mt-2.5 mb-5">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             {renderStars(rating)}

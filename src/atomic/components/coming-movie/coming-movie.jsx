@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { axiosWithAuth } from "../../../service/index";
 import Card from "../card/card";
+import { Link } from "react-router-dom";
 
 function ComingMovie({ action }) {
   const [listComingMovie, setlistComingMovie] = useState([]);
@@ -13,20 +14,23 @@ function ComingMovie({ action }) {
       });
 
       setlistComingMovie(data.data.content.filter((i) => checkComingMovie(i)));
-      console.log(data.data.content);
+      // console.log(data.data.content);
     })();
   }, []);
-  console.log(listComingMovie);
+  // console.log(listComingMovie);
   return (
     <div className="show grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
       {listComingMovie.map((movie) => (
-        <Card
-          name={movie.tenPhim}
-          image={movie.hinhAnh}
-          rating={movie.danhGia}
-          description={movie.moTa}
-        />
-        // </Link>
+        <div key={movie.maPhim}>
+          <Link to={`/movie/${movie.maPhim}`}>
+            <Card
+              name={movie.tenPhim}
+              image={movie.hinhAnh}
+              rating={movie.danhGia}
+              description={movie.moTa}
+            />
+          </Link>
+        </div>
       ))}
     </div>
   );
