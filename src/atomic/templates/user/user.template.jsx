@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/button/button";
 import ComingMovie from "../../components/coming-movie/index";
 import ShowingMovie from "../../components/showing-movie/index";
+import TheaterShowtimes from "../../components/theaterShowtimes/index";
 import Home from "../../pages/home/index";
 
 export function UserTemplate() {
@@ -17,7 +18,7 @@ export function UserTemplate() {
 
   const showElement = (value) => {
     setdisplayMovie(value);
-    console.log(displayMovie);
+    // console.log(displayMovie);
   };
   return (
     <div>
@@ -49,7 +50,7 @@ export function UserTemplate() {
         <div>
           <Home></Home>
         </div>
-        <div className="w-[80%] m-auto">
+        <div className="w-[80%] mx-auto">
           <Button
             onclick={() => {
               showElement(true);
@@ -64,6 +65,7 @@ export function UserTemplate() {
           ></Button>
         </div>
         <div>{displayMovie === true ? <ShowingMovie /> : <ComingMovie />}</div>
+        <TheaterShowtimes />
         {/* <Suspense fallback={<>Loading...</>}>
         <Outlet />
       </Suspense> */}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import DetailMovie from "../atomic/components/detailMovie/index";
 import { UserTemplate } from "../atomic/templates/user/index";
 
 const Home = lazy(() => import("../atomic/pages/home/index"));
@@ -27,8 +28,10 @@ export const router = createBrowserRouter([
         <Login />
       </Suspense>
     ),
-  }, {
-    path: "/movie/"
+  },
+  {
+    path: "/movie/:id",
+    element: <DetailMovie />,
   },
   {
     path: "*",
