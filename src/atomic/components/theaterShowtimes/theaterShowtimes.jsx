@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { axiosWithAuth } from "../../../service/axios.config";
+import { axiosWithAuth } from "../../../service/axios/index";
 
 function TheaterShowtimes() {
   const [listTheaterShowtimes, setListTheaterShowtimes] = useState([]);

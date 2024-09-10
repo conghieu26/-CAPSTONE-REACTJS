@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../../components/button/button";
-import ComingMovie from "../../components/coming-movie/index";
-import ShowingMovie from "../../components/showing-movie/index";
-import TheaterShowtimes from "../../components/theaterShowtimes/index";
-import Home from "../../pages/home/index";
+import Button from "../../../components/button/button";
+import ComingMovie from "../../../components/comingMovie/index";
+import ShowingMovie from "../../../components/showingMovie/index";
+import TheaterShowtimes from "../../../components/theaterShowtimes/index";
+import Home from "../../../pages/home/index";
 
 export function UserTemplate() {
   const value = [

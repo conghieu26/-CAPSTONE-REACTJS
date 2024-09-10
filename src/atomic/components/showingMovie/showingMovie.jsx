@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { axiosWithAuth } from "../../../service/index";
-import Card from "../card/card";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { axiosWithAuth } from "../../../service/axios/index";
+import Card from "../card/card";
 
-function ComingMovie({ action }) {
-  const [listComingMovie, setlistComingMovie] = useState([]);
-  const checkComingMovie = (i) => i.dangChieu === false && i.sapChieu === true;
+function ShowingMovie() {
+  const [listShowingMovie, setlistShowingMovie] = useState([]);
+  const checkShowingMovie = (i) => i.dangChieu === true && i.sapChieu === false;
   useEffect(() => {
     (async () => {
       const data = await axiosWithAuth({
@@ -13,14 +13,17 @@ function ComingMovie({ action }) {
         url: "/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
       });
 
-      setlistComingMovie(data.data.content.filter((i) => checkComingMovie(i)));
+      setlistShowingMovie(
+        data.data.content.filter((i) => checkShowingMovie(i)),
+      );
       // console.log(data.data.content);
     })();
   }, []);
-  // console.log(listComingMovie);
+  // console.log(listShowingMovie);
+
   return (
-    <div className="show grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
-      {listComingMovie.map((movie) => (
+    <div className="grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6">
+      {listShowingMovie.map((movie) => (
         <div key={movie.maPhim}>
           <Link to={`/movie/${movie.maPhim}`}>
             <Card
@@ -36,4 +39,4 @@ function ComingMovie({ action }) {
   );
 }
 
-export default ComingMovie;
+export default ShowingMovie;

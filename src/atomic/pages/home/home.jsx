@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { axiosWithAuth } from "../../../service/axios.config";
+import { axiosWithAuth } from "../../../service/axios/index";
 import { Carousel } from "../../components/carousel/index";
 import { useTitle } from "../../components/hooks/title.hook";
 function Home() {
