@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../../../service/index";
 import Card from "../card/card";
-import { Link } from "react-router-dom";
 
-function ComingMovie({ action }) {
+function ComingMovie() {
   const [listComingMovie, setlistComingMovie] = useState([]);
   const checkComingMovie = (i) => i.dangChieu === false && i.sapChieu === true;
   useEffect(() => {
@@ -19,7 +19,7 @@ function ComingMovie({ action }) {
   }, []);
   // console.log(listComingMovie);
   return (
-    <div className="show grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
+    <div className="grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
       {listComingMovie.map((movie) => (
         <div key={movie.maPhim}>
           <Link to={`/movie/${movie.maPhim}`}>
