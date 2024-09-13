@@ -10,6 +10,7 @@ function TheaterShowtimes() {
   return (
     <div className="mx-auto w-[80%] flex flex-row">
       <ShowIconTheater />
+      
     </div>
   );
 }
