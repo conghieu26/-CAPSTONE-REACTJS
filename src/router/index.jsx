@@ -2,9 +2,8 @@ import * as React from "react";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import DetailMovie from "../atomic/components/detailMovie/index";
-import { UserTemplate } from "../atomic/templates/user/index";
+import { UserTemplate } from "../atomic/templates/user/user.template/index";
 
-const Home = lazy(() => import("../atomic/pages/home/index"));
 const Register = lazy(() => import("../atomic/pages/register/index"));
 const Login = lazy(() => import("../atomic/pages/login/index"));
 
