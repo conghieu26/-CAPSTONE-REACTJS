@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD:src/atomic/components/coming-movie/coming-movie.jsx
+import { axiosWithAuth } from "../../../service/index";
+=======
 import { axiosWithAuth } from "../../../service/axios/index";
+>>>>>>> main:src/atomic/components/comingMovie/comingMovie.jsx
 import Card from "../card/card";
 
-function ComingMovie({ action }) {
+function ComingMovie() {
   const [listComingMovie, setlistComingMovie] = useState([]);
   const checkComingMovie = (i) => i.dangChieu === false && i.sapChieu === true;
   useEffect(() => {
@@ -19,7 +23,7 @@ function ComingMovie({ action }) {
   }, []);
   // console.log(listComingMovie);
   return (
-    <div className="show grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
+    <div className="grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
       {listComingMovie.map((movie) => (
         <div key={movie.maPhim}>
           <Link to={`/movie/${movie.maPhim}`}>
