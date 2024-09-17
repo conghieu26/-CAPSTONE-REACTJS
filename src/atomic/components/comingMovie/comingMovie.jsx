@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD:src/atomic/components/coming-movie/coming-movie.jsx
-import { axiosWithAuth } from "../../../service/index";
-=======
+
 import { axiosWithAuth } from "../../../service/axios/index";
->>>>>>> main:src/atomic/components/comingMovie/comingMovie.jsx
 import Card from "../card/card";
 
 function ComingMovie() {

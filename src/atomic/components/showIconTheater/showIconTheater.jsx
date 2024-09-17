@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { axiosWithAuth } from "../../../service/index";
+
+import { axiosWithAuth } from "../../../service/axios/index";
 import ShowInformationTheater from "../showInformationTheater/index";
 
 function ShowIconTheater({ onclick }) {

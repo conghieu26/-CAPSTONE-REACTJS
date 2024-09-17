@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { axiosWithAuth } from "../../../service/index";
+import { axiosWithAuth } from "../../../service/axios/index";
 
 function ShowInformationTheater({ name }) {
   const [listInformationScheduleMovie, setListInformationScheduleMovie] =
