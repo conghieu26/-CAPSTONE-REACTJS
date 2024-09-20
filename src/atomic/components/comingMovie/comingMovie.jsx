@@ -20,7 +20,7 @@ function ComingMovie() {
   }, []);
   // console.log(listComingMovie);
   return (
-    <div className="grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6 ">
+    <div className="grid grid-cols-5 mx-auto w-[80%] mb-4 gap-6">
       {listComingMovie.map((movie) => (
         <div key={movie.maPhim}>
           <Link to={`/movie/${movie.maPhim}`}>
